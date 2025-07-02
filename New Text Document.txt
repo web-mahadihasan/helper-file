@@ -1,0 +1,24 @@
+This component some issue. i describe it below. please read carefully. 
+read full component properly for better understan. 
+
+this is product modal. when user click select product then open is modal. user can filter product search product. user can select variant. 
+toggleVariant, handleCheckboxChange, isProductSelected, isVariantSelected, handleConfirm, handleFilterApply
+all function is work perfactly no issus here. so no need change these function if not important. 
+
+My issue. 
+i use Scroll infinity scroll that means user scroll down then product will be loaded. 
+but this is my main issue. when open this modal and user start scroll this time start fetching and it will fetch multiple time.. 
+means user scroll one time and fetch multiple time. it's not logical. 
+it should like that i featch 20 product at a time. when user come the bottom position of last product then user see a loader which means product loading, after finished loading new fetch product will add. 
+(make sure first fetch product also so. currenlty is show this way. and no duplicate product. currently it fine. )
+when fetch product and user show loading this time if user scroll multiple of times no fetch new. like block fetch until complete this fetch. after complete not start new fetch again. new fetch start again when user again scroll down and come the bottom position of last product then again loading and fetching product. at the same time again block fetch until same way like if user scroll and not come the bottom of position then no fetch again. 
+so need so fix it for user get better experience, smooth experience, no unnessary fetch. 
+
+manage loading in perfectly and properly. 
+another issue is when user use filter then user not show loading because some product already set and loading show in bottom, user can't under stand filter product is loading, if user filter deeply then this issue is fetch user. user don't under stand product is loading, 
+another issue is when search product then if user remove search then search product is show top. it not logical if user remove search then fetching and new product will show. i think this issue for when scroll this time fetch product and add previous product that's why. so when user scroll this time only add new product with previous product(must be no duplicate product)
+others time fetching product when filter and search this time no need add previous product, new product will show. only add with previous product when scroll and fetch. this is my idea. but you can implement the best way for me. user can get best user experience and smoth expericen. 
+
+sometimes another issue fetch if user select product this will automatically unselect. i don't find out why it is. if you understand please fix it. 
+
+so read component full, read my requirements, read currecnt problem and give me best solution for best user experience. give me full solution with full code. and make sure scroll, fetch, loading is perfetly work. 
